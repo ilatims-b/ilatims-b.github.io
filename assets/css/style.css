@@ -158,6 +158,7 @@ code {
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid #222;
+  filter: none !important;
 }
 
 .icon-links {
@@ -186,62 +187,46 @@ code {
 /* Ensure uniform card heights within grids */
 .card-grid .card { min-height: 180px; }
 
-/* IMAGE STYLING - Dark Theme Friendly (BLOG CONTENT ONLY) */
-/* Exclude profile pictures, card images, logos, and icons */
-img:not(.card-img):not([alt*="Profile"]):not([alt*="profile"]):not([src*="logo"]):not([src*="icon"]):not(.no-invert) {
+/* PROFILE IMAGE - NEVER INVERT */
+.profile-img {
+  filter: none !important;
+}
+
+/* IMAGE STYLING - Dark Theme Friendly */
+/* Apply ONLY to images in blog posts/content areas */
+.container img:not(.card-img):not(.profile-img):not([src*="logo"]):not([src*="icon"]) {
   display: block;
   width: 80%;
   max-width: 750px;
   height: auto;
   margin: 1.5rem auto;
   border-radius: 10px;
-
-  /* Invert white backgrounds to dark for better visibility */
   filter: invert(0.92) hue-rotate(180deg);
   border: 1px solid #222;
 }
 
 /* Smaller images for formulas and definitions */
-img[alt*="definition"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="formulation"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="formula"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="PGR"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="diagram"]:not(.card-img):not([alt*="Profile"]) {
+.container img[alt*="definition"]:not(.card-img):not(.profile-img),
+.container img[alt*="formulation"]:not(.card-img):not(.profile-img),
+.container img[alt*="formula"]:not(.card-img):not(.profile-img),
+.container img[alt*="PGR"]:not(.card-img):not(.profile-img),
+.container img[alt*="diagram"]:not(.card-img):not(.profile-img) {
   width: 60%;
   max-width: 550px;
 }
 
 /* Medium-sized images for effects and templates */
-img[alt*="template"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="Effect"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="baseline"]:not(.card-img):not([alt*="Profile"]) {
+.container img[alt*="template"]:not(.card-img):not(.profile-img),
+.container img[alt*="Effect"]:not(.card-img):not(.profile-img),
+.container img[alt*="baseline"]:not(.card-img):not(.profile-img) {
   width: 70%;
   max-width: 650px;
 }
 
 /* Larger images for tables and results */
-img[alt*="table"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="results"]:not(.card-img):not([alt*="Profile"]),
-img[alt*="across"]:not(.card-img):not([alt*="Profile"]) {
+.container img[alt*="table"]:not(.card-img):not(.profile-img),
+.container img[alt*="results"]:not(.card-img):not(.profile-img),
+.container img[alt*="across"]:not(.card-img):not(.profile-img) {
   width: 90%;
   max-width: 850px;
-}
-
-/* Explicitly preserve styling for card images (no filter, fixed size) */
-.card-img {
-  filter: none !important;
-  width: 140px !important;
-  height: 120px !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-/* Profile images and other hero images should NOT be inverted */
-img[alt*="Profile"],
-img[alt*="profile"],
-img[src*="profile"],
-img[src*="logo"],
-img[src*="icon"],
-.no-invert {
-  filter: none !important;
 }

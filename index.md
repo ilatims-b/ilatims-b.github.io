@@ -10,7 +10,8 @@ title: Home
     <p>I enjoy trekking, travelling, talking to trees, playing badminton, and sketching. (Although these hobbies have been rare since trying to open transformers inside out.)</p>
   </div>
   <div style="flex: 1;">
-    <img src="/assets/images/profile.jpeg" alt="Profile picture" style="width: 100%; max-width: 300px; border-radius: 8px;">
+    <img src="/assets/images/profile.jpeg" alt="Profile picture" class="profile-img" style="width: 100%; max-width: 300px; border-radius: 8px;">
+
   </div>
 </div>
 

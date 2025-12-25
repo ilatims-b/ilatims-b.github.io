@@ -31,7 +31,7 @@ permalink: /projects/
       </div>
     </div>
     <a href="https://drive.google.com/file/d/15u7cjsArURCMpMlFUK5zeX4F_n5t5E1s/view" target="_blank">
-      <img class="card-img" src="assets/images/interferometry_infographic.png" alt="infographic placeholder" />
+      <img class="card-img" src="/assets/images/interferometry_infographic.png" alt="infographic placeholder" />
     </a>
   </div>
 
