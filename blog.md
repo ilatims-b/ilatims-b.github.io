@@ -4,46 +4,39 @@ title: Blog
 permalink: /blog/
 ---
 
-{% assign posts = site.posts %}
-{% assign featured = posts | where: "title", "Distilling Truth from Falsehood" | first %}
-
-{% if featured %}
-<div class="card-grid" style="margin-bottom: 24px;">
-  <div class="card card-row">
-    <div style="flex:1;min-width:0;">
-      {% assign ft_text = featured.content | strip_html | strip_newlines %}
-      {% assign ft_words = ft_text | split: ' ' | size %}
-      {% assign ft_minutes = ft_words | divided_by: 200 | plus: 1 %}
-      <h3 class="card-title"><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
-      <p class="card-subtitle">{{ ft_minutes }} min read • {{ featured.date | date: "%Y-%m-%d" }}</p>
-      <p class="card-body">{{ featured.excerpt | default: featured.content | strip_html | truncatewords: 36 }}</p>
-    </div>
-    {% if featured.image %}
-      <img class="card-img" src="{{ featured.image }}" alt="{{ featured.title }}" />
-    {% endif %}
-  </div>
-</div>
-{% endif %}
+{% assign distill = site.pages | where: "title", "Distilling Truth from Falsehood" | first %}
+{% assign lenses = site.pages | where: "title", "Through the Lenses - A Circuit Odyssey" | first %}
 
 <div class="card-grid">
-  {% for post in posts %}
-  {% if featured and post.url == featured.url %}
-    {% continue %}
-  {% endif %}
-  {% assign text = post.content | strip_html | strip_newlines %}
+  {% if distill %}
+  {% assign text = distill.content | strip_html | strip_newlines %}
   {% assign words = text | split: ' ' | size %}
   {% assign minutes = words | divided_by: 200 | plus: 1 %}
+  {% assign desc = distill.excerpt | default: distill.content | strip_html | truncatewords: 36 %}
   <div class="card card-row">
     <div style="flex:1;min-width:0;">
-      <h3 class="card-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p class="card-subtitle">{{ minutes }} min read • {{ post.date | date: "%Y-%m-%d" }}</p>
-      <p class="card-body">{{ post.excerpt | default: post.content | strip_html | truncatewords: 36 }}</p>
+      <h3 class="card-title"><a href="{{ distill.url | relative_url }}">{{ distill.title }}</a></h3>
+      <p class="card-subtitle">{{ minutes }} min read{% if distill.date %} • {{ distill.date | date: "%Y-%m-%d" }}{% endif %}</p>
+      <p class="card-body">{% if desc != '' %}{{ desc }}{% else %}Coming soon.{% endif %}</p>
     </div>
-    {% if post.image %}
-      <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}" />
-    {% endif %}
+    <img class="card-img" src="{{ "/assets/images/distilling_truth/Weak-to-strong%20generalization.png" | relative_url }}" alt="{{ distill.title }}" />
   </div>
-  {% endfor %}
+  {% endif %}
+
+  {% if lenses %}
+  {% assign text = lenses.content | strip_html | strip_newlines %}
+  {% assign words = text | split: ' ' | size %}
+  {% assign minutes = words | divided_by: 200 | plus: 1 %}
+  {% assign desc = lenses.excerpt | default: lenses.content | strip_html | truncatewords: 36 %}
+  <div class="card card-row">
+    <div style="flex:1;min-width:0;">
+      <h3 class="card-title"><a href="{{ lenses.url | relative_url }}">{{ lenses.title }}</a></h3>
+      <p class="card-subtitle">{{ minutes }} min read{% if lenses.date %} • {{ lenses.date | date: "%Y-%m-%d" }}{% endif %}</p>
+      <p class="card-body">{% if desc != '' %}{{ desc }}{% else %}Coming soon.{% endif %}</p>
+    </div>
+    <!-- No image yet for this post -->
+  </div>
+  {% endif %}
 </div>
 
 <div style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">
