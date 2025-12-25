@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Google Fonts: Fira Code for that "coding but readable" look -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+            <nav>
+                <a href="/" class="{% if page.url == '/' %}active{% endif %}">~/me</a>
+                <a href="/projects/" class="{% if page.url == '/projects/' %}active{% endif %}">~/projects</a>
+                <a href="/blog/" class="{% if page.url == '/blog/' %}active{% endif %}">~/blog</a>
+            </nav>
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <p>&copy; {{ "now" | date: "%Y" }}</p>
+        </footer>
+    </div>
+</body>
+</html>

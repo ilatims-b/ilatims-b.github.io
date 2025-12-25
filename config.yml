@@ -1,0 +1,8 @@
+title: "smitali bhandari" # Add your name here
+description: "" 
+url: "https://ilatims-b.github.io" # e.g. https://yourusername.github.io
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag

@@ -1,0 +1,111 @@
+/* RESET & BASICS */
+:root {
+    --bg-color: #000000;      /* Pure Black */
+    --text-color: #e0e0e0;    /* Soft White for readability */
+    --accent-color: #00ff00;  /* Classic Terminal Green for highlights (optional) */
+    --dim-color: #888888;     /* For dates and secondary text */
+    --link-color: #ffffff;    /* Links are white */
+    --font-main: 'Fira Code', 'Consolas', 'Monaco', monospace; /* The "lil bit coding" font */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* HEADER & NAV */
+header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.site-title a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    border: none;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--dim-color);
+    font-size: 0.95rem;
+}
+
+nav a:hover, nav a.active {
+    color: var(--link-color);
+    text-decoration: underline; 
+    text-decoration-thickness: 1px;
+}
+
+/* LINKS & TYPOGRAPHY */
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; border-bottom: 1px solid #222; padding-bottom: 0.5rem; }
+h3 { font-size: 1.2rem; }
+
+/* PROJECT & BLOG LISTS */
+.post-list, .project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item, .project-item {
+    margin-bottom: 1.5rem;
+}
+
+.post-date, .project-tech {
+    display: inline-block;
+    min-width: 120px;
+    color: var(--dim-color);
+    font-size: 0.9rem;
+}
+
+.project-title, .post-title {
+    font-weight: 600;
+}
+
+code {
+    background: #111;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    border: 1px solid #333;
+}
