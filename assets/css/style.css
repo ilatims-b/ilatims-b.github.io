@@ -109,3 +109,78 @@ code {
     font-size: 0.9em;
     border: 1px solid #333;
 }
+
+/* CARDS & GRIDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 820px) {
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.card-row {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.card-title {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+}
+
+.card-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    color: var(--dim-color);
+}
+
+.card-body {
+    margin: 0 0 10px 0;
+}
+
+.card-img {
+    width: 140px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #222;
+}
+
+.icon-links {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-links a {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid #333;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.icon-links a:hover {
+    border-color: #555;
+}
+
+.muted { color: var(--dim-color); font-size: 0.9rem; }
+
+/* Ensure uniform card heights within grids */
+.card-grid .card { min-height: 180px; }

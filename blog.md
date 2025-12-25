@@ -4,14 +4,25 @@ title: Blog
 permalink: /blog/
 ---
 
-<ul class="post-list">
-    {% for post in site.posts %}
-    <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+{% assign posts = site.posts %}
+
+<div class="card-grid">
+  {% for post in posts %}
+  {% assign text = post.content | strip_html | strip_newlines %}
+  {% assign words = text | split: ' ' | size %}
+  {% assign minutes = words | divided_by: 200 | plus: 1 %}
+  <div class="card card-row">
+    <div style="flex:1;min-width:0;">
+      <h3 class="card-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="card-subtitle">{{ minutes }} min read • {{ post.date | date: "%Y-%m-%d" }}</p>
+      <p class="card-body">{{ post.excerpt | default: post.content | strip_html | truncatewords: 36 }}</p>
+    </div>
+    {% if post.image %}
+      <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}" />
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
 
 <div style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">
   <span>Page under construction</span>
