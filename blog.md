@@ -5,9 +5,31 @@ permalink: /blog/
 ---
 
 {% assign posts = site.posts %}
+{% assign featured = posts | where: "title", "Distilling Truth from Falsehood" | first %}
+
+{% if featured %}
+<div class="card-grid" style="margin-bottom: 24px;">
+  <div class="card card-row">
+    <div style="flex:1;min-width:0;">
+      {% assign ft_text = featured.content | strip_html | strip_newlines %}
+      {% assign ft_words = ft_text | split: ' ' | size %}
+      {% assign ft_minutes = ft_words | divided_by: 200 | plus: 1 %}
+      <h3 class="card-title"><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
+      <p class="card-subtitle">{{ ft_minutes }} min read • {{ featured.date | date: "%Y-%m-%d" }}</p>
+      <p class="card-body">{{ featured.excerpt | default: featured.content | strip_html | truncatewords: 36 }}</p>
+    </div>
+    {% if featured.image %}
+      <img class="card-img" src="{{ featured.image }}" alt="{{ featured.title }}" />
+    {% endif %}
+  </div>
+</div>
+{% endif %}
 
 <div class="card-grid">
   {% for post in posts %}
+  {% if featured and post.url == featured.url %}
+    {% continue %}
+  {% endif %}
   {% assign text = post.content | strip_html | strip_newlines %}
   {% assign words = text | split: ' ' | size %}
   {% assign minutes = words | divided_by: 200 | plus: 1 %}
