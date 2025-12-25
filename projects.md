@@ -18,7 +18,7 @@ permalink: /projects/
 
 <h2>Past Projects</h2>
 
-<!-- <div class="card-grid">
+<div class="card-grid">
   <!-- Project: Interferometry and SQUIDs -->
   <div class="card card-row">
     <div style="flex:1;min-width:0;">
@@ -26,14 +26,27 @@ permalink: /projects/
       <p class="card-subtitle">Team Quaternions, Quantum sensing</p>
       <div class="icon-links" aria-label="Project links">
         <a href="/assets/images/interferometry_infographic.png" title="Infographic" aria-label="Infographic">
-          <!-- Image icon -->
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#e0e0e0" xmlns="http://www.w3.org/2000/svg"><path d="M21 19V5a2 2 0 0 0-2-2H5C3.9 3 3 3.9 3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5zM8 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
         </a>
       </div>
     </div>
-    <img class="card-img" src="/assets/images/interferometry.jpg" alt="infographic placeholder" />
+    <a href="https://drive.google.com/file/d/15u7cjsArURCMpMlFUK5zeX4F_n5t5E1s/view" target="_blank">
+      <img class="card-img" src="/assets/images/interferometry.jpg" alt="infographic placeholder" />
+    </a>
   </div>
-</div> -->
+
+  <!-- Project: Korselt's criterion for k-Carmichael -->
+  <div class="card">
+    <h3 class="card-title"><a href="/projects/korselt-criterion/">Korselt's criterion for k-Carmichael</a></h3>
+    <p class="card-subtitle">promys'22, number theory</p>
+  </div>
+
+  <!-- Project: BitSync -->
+  <div class="card">
+    <h3 class="card-title"><a href="/projects/bitsync/">BitSync</a></h3>
+    <p class="card-subtitle">syncing of the bits, info theory, error correction codes</p>
+  </div>
+</div>
 <div style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">
   <span>Page under construction</span>
   <a href="https://linkedin.com/in/smitali-bhandari" target="_blank" style="display: inline-block; width: 40px; height: 40px; background-color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
