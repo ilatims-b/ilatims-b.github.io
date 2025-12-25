@@ -250,7 +250,7 @@ The sign ambiguity is resolved using Alice's labels.
 
 As we saw, a core challenge is that humans will need to supervise models which exceed our intelligence. [Burns et al](https://arxiv.org/abs/2312.09390) terms this as a weak-to-strong learning problem. This motivates the authors to replace a weak human supervisor with a weak model supervisor, and introduces the "Performance Gap Recovered" metric.
 
-<img src="/assets/images/distilling_truth/pgr_.png" alt="Performance Gap Recovered definition" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/pgr_.png" alt="Performance Gap Recovered definition" style="width: 60%; display: block; margin: auto; border-radius: 10px;" />
 PGR measures the fraction of the performance gap that we can recover with weak supervision. If we achieve perfect weak-to-strong generalization, PGR is 1, and if the weak-to-strong model does no better than the weak supervisor, PGR is 0.
 Authors in the ELK paper define PGR as follows:
 
@@ -307,7 +307,7 @@ Accordingly, we can, to a significant extent elicit truth representations on har
 
 ### PGR across datasets and methods
 
-<img src="/assets/images/distilling_truth/PGR%20across%20datasets.png" alt="PGR across datasets" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/PGR%20across%20datasets.png" alt="PGR across datasets" style="max-width: 100%; border-radius: 5px;" />
 
 Demonstrates AE → BH transfer PGRs broken down by probing method and dataset at the Earliest informative layer, averaged over 12 models. The last two rows show the weak floor and strong ceil values used for PGR calculation.
 
@@ -323,7 +323,7 @@ Key findings:
 
 ### PGR across models
 
-<img src="/assets/images/distilling_truth/PGR%20across%20models.png" alt="PGR across models" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/PGR%20across%20models.png" alt="PGR across models" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
 
 The AE → BH transfer PGR increases with base model capability
 
@@ -335,7 +335,7 @@ As described earlier, the "single" prompt template is the default template setup
 
 Although surrounding the diverse text with a standardized meta-template as in [Zou et al. (2023)](https://arxiv.org/abs/2310.01405), mitigates this harm and even improves the performance upon single template PGR when using unsupervised methods in All → BH setting.
 
-<img src="/assets/images/distilling_truth/Meta%20template.png" alt="The meta template" style="width: 90%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Meta%20template.png" alt="The meta template" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
 *The meta template*
 
 ### Effects of LoRA
@@ -344,7 +344,7 @@ Low-Rank Adaption is a method to fine-tune a large language model without modify
 
 In the papers authors modified all the attention and MLP matrices by rank 8 LoRA (Suppose the dimension of A is r×d and that of B is d×r. Rank-8 implies r=8).
 
-<img src="/assets/images/distilling_truth/Effect%20of%20LoRA.png" alt="Effects of LoRA" style="width: 70%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Effect%20of%20LoRA.png" alt="Effects of LoRA" style="width: 60%; display: block; margin: auto; border-radius: 10px;" />
 
 Models trained with LoRA attain higher PGR compared to full finetuning, indicating LoRA may have useful regularizing effects for weak-to-strong generalization (Burns et al., 2023), and that the choice of ELK probing method may need to consider details of the training process of the model in question.
 
