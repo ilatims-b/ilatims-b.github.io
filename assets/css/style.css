@@ -184,3 +184,50 @@ code {
 
 /* Ensure uniform card heights within grids */
 .card-grid .card { min-height: 180px; }
+
+/* IMAGE STYLING - Dark Theme Friendly */
+img {
+  display: block;
+  width: 80%;
+  max-width: 750px;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+
+  /* Invert white backgrounds to dark for better visibility */
+  filter: invert(0.92) hue-rotate(180deg);
+  border: 1px solid #222;
+}
+
+/* Smaller images for formulas and definitions */
+img[alt*="definition"],
+img[alt*="formulation"],
+img[alt*="formula"],
+img[alt*="PGR"],
+img[alt*="diagram"] {
+  width: 60%;
+  max-width: 550px;
+}
+
+/* Medium-sized images for effects and templates */
+img[alt*="template"],
+img[alt*="Effect"],
+img[alt*="baseline"] {
+  width: 70%;
+  max-width: 650px;
+}
+
+/* Larger images for tables and results */
+img[alt*="table"],
+img[alt*="results"],
+img[alt*="across"] {
+  width: 90%;
+  max-width: 850px;
+}
+
+/* If you have logo or icon images that shouldn't be inverted */
+img[src*="logo"],
+img[src*="icon"],
+.no-invert {
+  filter: none;
+}

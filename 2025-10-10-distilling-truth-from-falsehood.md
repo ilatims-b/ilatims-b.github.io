@@ -76,7 +76,7 @@ For an ELK method to be useful for scalable oversight i.e. a method which monito
 
 The major aim of the paper is to identify if a weak performance probe generalises to strong performance scenarios, trying to mimic the real-world scenario where a weak human supervisor supervises a strong model, which might be beyond human intelligence.
 
-<img src="/assets/images/distilling_truth/Weak-to-strong%20generalization.png" alt="Weak-to-strong generalization - eliciting strong capabilities with weak supervision" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Weak-to-strong%20generalization.png" alt="Weak-to-strong generalization - eliciting strong capabilities with weak supervision" />
 *Weak-to-strong generalization - eliciting strong capabilities with weak supervision*
 
 It also explores the pros and cons of unsupervised probing methods like Contrast Consistent Search and Contrastive Representation Learning.
@@ -93,15 +93,15 @@ Each base model is fine-tuned once per dataset in a way that makes it respond di
 
 As an example, consider the addition dataset:
 
-<img src="/assets/images/distilling_truth/Addition%20dataset%20example.png" alt="Addition dataset example" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Addition%20dataset%20example.png" alt="Addition dataset example" />
 
 Another example would be the capitals dataset:
 
-<img src="/assets/images/distilling_truth/Capitals%20dataset%20example.png" alt="Capitals dataset example" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Capitals%20dataset%20example.png" alt="Capitals dataset example" />
 
 Here, the difficulty metric is the negative log of population, assuming that a city having a higher population is more likely to be talked of, motivated by prior work that finds Wikipedia pageview count to be predictive of whether LMs know facts about the titular entity [(Mallen et al., 2023)](https://arxiv.org/abs/2212.10511).
 
-<img src="/assets/images/distilling_truth/Experiment%20diagram.png" alt="Experiment diagram showing base model, probe method, and transfer experiment" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Experiment%20diagram.png" alt="Experiment diagram showing base model, probe method, and transfer experiment" />
 *This diagram shows an experiment involving a base model, a probe method and a transfer experiment*
 
 ### Methods
@@ -250,11 +250,14 @@ The sign ambiguity is resolved using Alice's labels.
 
 As we saw, a core challenge is that humans will need to supervise models which exceed our intelligence. [Burns et al](https://arxiv.org/abs/2312.09390) terms this as a weak-to-strong learning problem. This motivates the authors to replace a weak human supervisor with a weak model supervisor, and introduces the "Performance Gap Recovered" metric.
 
-<img src="/assets/images/distilling_truth/pgr_.png" alt="Performance Gap Recovered definition" style="width: 60%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/pgr_.png" alt="Performance Gap Recovered definition" />
+
 PGR measures the fraction of the performance gap that we can recover with weak supervision. If we achieve perfect weak-to-strong generalization, PGR is 1, and if the weak-to-strong model does no better than the weak supervisor, PGR is 0.
+
 Authors in the ELK paper define PGR as follows:
 
-<img src="/assets/images/distilling_truth/pgr_elk.png" alt="PGR ELK formulation" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/pgr_elk.png" alt="PGR ELK formulation" />
+
 The ‘weak performance/weak supervisor model’ corresponds to AUROC floor, the ‘strong performance/strong student model’ corresponds to the AUROC ceil and the probe whose performance is to be quantified is labelled as just AUROC.
 
 For AUROC ceil, train a probe on Alice's contexts' final-layer activations using ground truth labels. Take the test AUROC score by performing classification using the trained probe on the validation set of Alice's context (again consider the final-layer activations).
@@ -271,7 +274,7 @@ The authors compare test results across various probing methods, transfers, data
 
 ### AE → BH random baseline
 
-<img src="/assets/images/distilling_truth/Random%20baseline%20diagram.png" alt="Random baseline diagram" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Random%20baseline%20diagram.png" alt="Random baseline diagram" />
 
 The above diagram suggests the following three results:
 
@@ -285,7 +288,7 @@ The above diagram suggests the following three results:
 
 Results are averaged over all models and datasets for probe on Earliest Informative Layer.
 
-<img src="/assets/images/distilling_truth/Transfer%20experiments%20results%20table.png" alt="Transfer experiments results table" style="max-width: 100%; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Transfer%20experiments%20results%20table.png" alt="Transfer experiments results table" />
 
 For the first row, AUROC is measured only on the set of examples where Alice and Bob disagree. (For example, Bob's untruthful label for capital of a country is the most populous state, but, the most populous state is the capital as well.) An AUROC of 1 corresponds to a probe that is maximally aligned with Alice's knowledge and AUROC of 0 corresponds to alignment with Bob's knowledge. Few datasets are excluded as there was only a truthful label for them
 
@@ -307,7 +310,7 @@ Accordingly, we can, to a significant extent elicit truth representations on har
 
 ### PGR across datasets and methods
 
-<img src="/assets/images/distilling_truth/PGR%20across%20datasets.png" alt="PGR across datasets" style="max-width: 100%; border-radius: 5px;" />
+<img src="/assets/images/distilling_truth/PGR%20across%20datasets.png" alt="PGR across datasets" />
 
 Demonstrates AE → BH transfer PGRs broken down by probing method and dataset at the Earliest informative layer, averaged over 12 models. The last two rows show the weak floor and strong ceil values used for PGR calculation.
 
@@ -323,7 +326,7 @@ Key findings:
 
 ### PGR across models
 
-<img src="/assets/images/distilling_truth/PGR%20across%20models.png" alt="PGR across models" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/PGR%20across%20models.png" alt="PGR across models" />
 
 The AE → BH transfer PGR increases with base model capability
 
@@ -331,11 +334,11 @@ The AE → BH transfer PGR increases with base model capability
 
 As described earlier, the "single" prompt template is the default template setup used throughout the paper. A "mixture" template setup applies one of the ten stylistically and syntactically diverse templates (see Appendix A of the paper) to each example uniformly at random. It was observed that this harms the linear extractability of context independent knowledge.
 
-<img src="/assets/images/distilling_truth/Effect%20of%20templates.png" alt="Effects of templates" style="width: 70%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Effect%20of%20templates.png" alt="Effects of templates" />
 
 Although surrounding the diverse text with a standardized meta-template as in [Zou et al. (2023)](https://arxiv.org/abs/2310.01405), mitigates this harm and even improves the performance upon single template PGR when using unsupervised methods in All → BH setting.
 
-<img src="/assets/images/distilling_truth/Meta%20template.png" alt="The meta template" style="width: 80%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Meta%20template.png" alt="The meta template" />
 *The meta template*
 
 ### Effects of LoRA
@@ -344,7 +347,7 @@ Low-Rank Adaption is a method to fine-tune a large language model without modify
 
 In the papers authors modified all the attention and MLP matrices by rank 8 LoRA (Suppose the dimension of A is r×d and that of B is d×r. Rank-8 implies r=8).
 
-<img src="/assets/images/distilling_truth/Effect%20of%20LoRA.png" alt="Effects of LoRA" style="width: 60%; display: block; margin: auto; border-radius: 10px;" />
+<img src="/assets/images/distilling_truth/Effect%20of%20LoRA.png" alt="Effects of LoRA" />
 
 Models trained with LoRA attain higher PGR compared to full finetuning, indicating LoRA may have useful regularizing effects for weak-to-strong generalization (Burns et al., 2023), and that the choice of ELK probing method may need to consider details of the training process of the model in question.
 
