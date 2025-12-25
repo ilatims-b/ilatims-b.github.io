@@ -25,13 +25,13 @@ permalink: /projects/
       <h3 class="card-title"><a href="/projects/interferometry-squids/">Interferometry and SQUIDs</a></h3>
       <p class="card-subtitle">Team Quaternions, Quantum sensing</p>
       <div class="icon-links" aria-label="Project links">
-        <a href="/assets/images/interferometry_infographic.png" title="Infographic" aria-label="Infographic">
+        <a href="https://drive.google.com/file/d/15u7cjsArURCMpMlFUK5zeX4F_n5t5E1s/view" title="Infographic" aria-label="Infographic">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#e0e0e0" xmlns="http://www.w3.org/2000/svg"><path d="M21 19V5a2 2 0 0 0-2-2H5C3.9 3 3 3.9 3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5zM8 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
         </a>
       </div>
     </div>
     <a href="https://drive.google.com/file/d/15u7cjsArURCMpMlFUK5zeX4F_n5t5E1s/view" target="_blank">
-      <img class="card-img" src="/assets/images/interferometry.jpg" alt="infographic placeholder" />
+      <img class="card-img" src="assets/images/interferometry_infographic.png" alt="infographic placeholder" />
     </a>
   </div>
 
