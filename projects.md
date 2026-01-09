@@ -14,11 +14,21 @@ permalink: /projects/
     <p class="card-body">Trying to open transformer inside out. Read: <a href="/blog/">lenses peering into the model's internals</a> and another on <a href="/blog/">distilling truth from falsehood</a>.</p>
     <p class="card-body">Currently, training toy transformers on markov processes, hoping to formulate transformer behaviours better.</p>
   </div>
+
+   <div class="card">
+    <h3 class="card-title"><a href="/projects/solstice/">Solstice</a></h3>
+    <p class="card-subtitle">stochastic optimization and learning theory in statistical models</p>
+  </div>
 </div>
 
 <h2>Past Projects</h2>
 
 <div class="card-grid">
+<div class="card">
+    <h3 class="card-title"><a href="/projects/bitsync/">BitSync</a></h3>
+    <p class="card-subtitle">syncing of the bits, info theory, error correction codes</p>
+  </div>
+  
   <!-- Project: Interferometry and SQUIDs -->
   <div class="card card-row">
     <div style="flex:1;min-width:0;">
@@ -41,11 +51,10 @@ permalink: /projects/
     <p class="card-subtitle">promys'22, number theory</p>
   </div>
 
+
+
   <!-- Project: BitSync -->
-  <div class="card">
-    <h3 class="card-title"><a href="/projects/bitsync/">BitSync</a></h3>
-    <p class="card-subtitle">syncing of the bits, info theory, error correction codes</p>
-  </div>
+  
 </div>
 <div style="margin-top: 40px; display: flex; align-items: center; gap: 10px;">
   <span>Page under construction</span>
